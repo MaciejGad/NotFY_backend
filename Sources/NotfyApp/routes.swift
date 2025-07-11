@@ -2,10 +2,9 @@ import Vapor
 
 func routes(_ app: Application) throws {
     app.get { req async in
-        "It works!"
+        "NotFY works!"
     }
-
-    app.get("hello") { req async -> String in
-        "Hello, world!"
-    }
+    try app.register(collection: DeviceRegistrationController())
+    try app.register(collection: ChannelController())
+    try app.register(collection: NotificationController())
 }
