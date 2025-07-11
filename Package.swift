@@ -15,6 +15,8 @@ let package = Package(
         .package(url: "https://github.com/vapor/fluent.git", from: "4.0.0"),
         // fluent MySQL driver for database interactions
         .package(url: "https://github.com/vapor/fluent-mysql-driver.git", from: "4.0.0"),
+        // APNs support for sending notifications
+        .package(url: "https://github.com/vapor/apns.git", from: "4.0.0"),
     ],
     targets: [
         .executableTarget(
@@ -25,6 +27,7 @@ let package = Package(
                 .product(name: "NIOPosix", package: "swift-nio"),
                 .product(name: "Fluent", package: "fluent"),
                 .product(name: "FluentMySQLDriver", package: "fluent-mysql-driver"),
+                .product(name: "VaporAPNS", package: "apns")
             ],
             swiftSettings: swiftSettings
         ),

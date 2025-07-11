@@ -13,6 +13,9 @@ public func configure(_ app: Application) async throws {
     app.migrations.add(ChannelDeviceMigration())
     app.migrations.add(NotificationMigration())
     
+    // APNS setup
+    try configureAPNS(app)
+    
     // register routes
     try routes(app)
 }
